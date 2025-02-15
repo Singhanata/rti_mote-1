@@ -335,17 +335,18 @@ bool checkNeighbourP() {
     return false;
   }
   uint8_t nID;
+  uint8_t csDIN = ((cS->DID) - DEVICE_OFFSET); 
   if CHECKFLAG (info.pos, ODD_SIDE_NEIGHBOUR_FLAG) {
-    if (cS->DID % 2 == 0)
+    if (csDIN % 2 == 0)
       return false;
     ver("Neighbour on ODD Side - ");
-    nID = (cS->DID / 2);
+    nID = (csDIN / 2);
   }
   if CHECKFLAG (info.pos, EVEN_SIDE_NEIGHBOUR_FLAG) {
-    if (cS->DID % 2 == 1)
+    if (csDIN % 2 == 1)
       return false;
     ver("Neighbour on EVEN Side - ");
-    nID = (cS->DID / 2) - 1;
+    nID = (csDIN / 2) - 1;
   }
   if (nID >= RTI_NEIGHBOUR_COUNT) {
     ver("Neigbour ID out of bound");
