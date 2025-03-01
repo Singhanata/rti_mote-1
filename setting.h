@@ -4,8 +4,7 @@
  *                  DEVICE SETTING                         *
  ***********************************************************/
 #define NET_PREFIX 0x10
-#define DEVICE_INDEX  7
-
+#define DEVICE_INDEX 0
 #if (DEVICE_INDEX == 0)
   #define ROOT_NODE  // ROOT NODE
 #else
